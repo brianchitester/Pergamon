@@ -1,0 +1,7 @@
+# Cursor Rules
+- Use TypeScript throughout.
+- Prefer React Server Components unless state/hook needed.
+- JSDoc every exported function.
+- Tailwind class order: display → position → box model → typography → color → misc.
+- Commit messages follow Conventional Commits: <type>(scope): <subject>.
+- PR titles must reference an open issue/TODO. 
