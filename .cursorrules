@@ -1,7 +1,17 @@
 # Cursor Rules
+
 - Use TypeScript throughout.
 - Prefer React Server Components unless state/hook needed.
 - JSDoc every exported function.
 - Tailwind class order: display → position → box model → typography → color → misc.
 - Commit messages follow Conventional Commits: <type>(scope): <subject>.
-- PR titles must reference an open issue/TODO. 
+- Use branches to make pull requests and include a description of the changes.
+- Use the following commit types:
+  - feat: A new feature
+  - fix: A bug fix
+  - docs: Documentation only changes
+  - style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  - refactor: A code change that neither fixes a bug nor adds a feature
+  - perf: A code change that improves performance
+  - test: Adding missing tests or correcting existing tests
+  - chore: Other changes that don't modify src or test files
