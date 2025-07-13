@@ -42,9 +42,15 @@ export default function LandingPage() {
                   View Demo
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                Learn More
-              </Button>
+              <Link href="/upload">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  Upload Photos
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -197,18 +203,18 @@ export default function LandingPage() {
               >
                 Demo
               </Link>
-              <a
-                href="#"
+              <Link
+                href="/upload"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                About
-              </a>
-              <a
-                href="#"
+                Upload
+              </Link>
+              <Link
+                href="/stats"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                Contact
-              </a>
+                Stats
+              </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">

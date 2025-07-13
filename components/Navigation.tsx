@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 interface NavigationProps {
   /** Current active page */
-  currentPage: 'home' | 'library' | 'statistics'
+  currentPage: 'home' | 'library' | 'statistics' | 'upload'
   /** Optional title to display */
   title?: string
   /** Optional subtitle to display */
@@ -47,6 +47,16 @@ export default function Navigation({
               }`}
             >
               Library
+            </Link>
+            <Link
+              href="/upload"
+              className={`inline-flex items-center px-3 py-2 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                currentPage === 'upload'
+                  ? 'border-transparent text-indigo-700 bg-indigo-100'
+                  : 'border-gray-300 text-gray-700 bg-white hover:bg-gray-50'
+              }`}
+            >
+              Upload
             </Link>
             <Link
               href="/stats"
