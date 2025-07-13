@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { Book, BookFilters } from '@/types/book'
+import { Book, BookFilter } from '@/types/book'
 
 /**
  * Custom hook for fetching and filtering book data
@@ -11,7 +11,7 @@ export function useBooks() {
   const [books, setBooks] = useState<Book[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [filters, setFilters] = useState<BookFilters>({
+  const [filters, setFilters] = useState<BookFilter>({
     search: '',
     genre: '',
     language: '',
@@ -83,17 +83,17 @@ export function useBooks() {
 
   // Update search filter
   const updateSearch = (search: string) => {
-    setFilters((prev) => ({ ...prev, search }))
+    setFilters((prev: BookFilter) => ({ ...prev, search }))
   }
 
   // Update genre filter
   const updateGenre = (genre: string) => {
-    setFilters((prev) => ({ ...prev, genre }))
+    setFilters((prev: BookFilter) => ({ ...prev, genre }))
   }
 
   // Update language filter
   const updateLanguage = (language: string) => {
-    setFilters((prev) => ({ ...prev, language }))
+    setFilters((prev: BookFilter) => ({ ...prev, language }))
   }
 
   // Clear all filters

@@ -27,8 +27,8 @@ export interface BookFilter {
   /** Filter by search term in title or author */
   search?: string
 
-  /** Filter by specific tag */
-  tag?: string
+  /** Filter by specific genre/tag */
+  genre?: string
 
   /** Filter by language */
   language?: string
