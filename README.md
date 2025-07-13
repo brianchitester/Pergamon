@@ -114,6 +114,46 @@ Pergamon/
 └── package.json             # Dependencies
 ```
 
+## Technical Design
+
+For detailed technical specifications and future development plans, see our [Technical Design Document](docs/Technical%20Design.md).
+
+## Coming Soon
+
+We're actively working on exciting new features to enhance your bookshelf experience:
+
+### 🚀 Full-Stack Version
+
+- **User Authentication**: Secure login with Supabase Auth
+- **Cloud Storage**: Store your books and images in the cloud
+- **Multi-User Support**: Each user gets their own personal library
+
+### 📸 Smart Book Recognition
+
+- **Photo Upload**: Take pictures of your bookshelves
+- **OCR Technology**: Automatic book spine recognition using OpenAI Vision
+- **Smart Enrichment**: Automatically fetch genres, languages, and Goodreads ratings
+
+### 📊 Advanced Library Management
+
+- **Visual Stats**: Beautiful charts showing your reading patterns
+- **Export Options**: Download your library as CSV or JSON
+- **Enhanced Filtering**: More sophisticated search and organization tools
+
+### 🎧 Audible Integration
+
+- **CLI Export Tool**: Command-line utility to export your Audible library
+- **Cross-Platform**: Works on Windows, macOS, and Linux
+- **Multiple Formats**: Export to CSV, JSON, or sync with Supabase
+
+### 🔄 Sync & Backup
+
+- **Cloud Sync**: Keep your library synchronized across devices
+- **Backup & Restore**: Never lose your carefully curated collection
+- **Import Tools**: Easy migration from other book management systems
+
+Stay tuned for these exciting updates! Follow our progress in the [Technical Design Document](docs/Technical%20Design.md).
+
 ## Contributing
 
 1. Fork the repository
