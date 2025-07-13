@@ -4,6 +4,7 @@ A beautiful client-only bookshelf application built with Next.js, TypeScript, an
 
 ## Features
 
+- 🌟 **Beautiful Landing Page**: Engaging homepage that showcases the vision and links to the demo
 - 📚 **Beautiful Book Display**: Clean, modern interface to showcase your book collection
 - 🔍 **Advanced Filtering**: Search by title/author, filter by genre and language
 - 📱 **Responsive Design**: Works perfectly on desktop, tablet, and mobile
@@ -47,7 +48,7 @@ A beautiful client-only bookshelf application built with Next.js, TypeScript, an
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) to see the landing page, or [http://localhost:3000/demo](http://localhost:3000/demo) to go directly to the bookshelf demo
 
 ### Building for Production
 
@@ -95,10 +96,14 @@ This application is configured for static export and can be deployed to:
 ```
 Pergamon/
 ├── app/
+│   ├── demo/
+│   │   └── page.tsx         # Demo page with bookshelf
 │   ├── globals.css          # Global styles
 │   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Homepage
+│   └── page.tsx             # Landing page
 ├── components/
+│   ├── ui/
+│   │   └── Button.tsx       # Reusable button component
 │   └── BookTable.tsx        # Main table component
 ├── lib/
 │   └── useBooks.ts          # Data fetching hook

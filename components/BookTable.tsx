@@ -9,7 +9,8 @@ import {
   flexRender,
   SortingState,
 } from '@tanstack/react-table'
-import { ExternalLink, Search, Filter, X } from 'lucide-react'
+import { ExternalLink, Search, Filter, X, BookOpen } from 'lucide-react'
+import Link from 'next/link'
 import { Book } from '@/types/book'
 import { useBooks } from '@/lib/useBooks'
 
@@ -118,10 +119,31 @@ export default function BookTable() {
 
   return (
     <div className="space-y-6">
+      {/* Navigation */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <BookOpen className="h-8 w-8 text-blue-600 mr-2" />
+              <span className="text-xl font-bold text-gray-900">Pergamon</span>
+            </div>
+            <div className="flex space-x-4">
+              <Link
+                href="/"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Home
+              </Link>
+              <span className="text-blue-600 font-medium">Demo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="text-center">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Pergamon Bookshelf
+          Pergamon Bookshelf Demo
         </h1>
         <p className="text-gray-600">
           Showing {filteredCount} of {totalBooks} books
