@@ -20,7 +20,9 @@ Pergamon Technical Design
 - ============================================================
 - 1.1 Initialize Git → `git init`
 - 1.2 Create `.cursorrules`:
--      ---
+
+---
+
 -      # Cursor Rules
 -      - Use TypeScript throughout.
 -      - Prefer React Server Components unless state/hook needed.
@@ -28,7 +30,9 @@ Pergamon Technical Design
 -      - Tailwind class order: display → position → box model → typography → color → misc.
 -      - Commit messages follow Conventional Commits: <type>(scope): <subject>.
 -      - PR titles must reference an open issue/TODO.
--      ---
+
+---
+
 - 1.3 Generate essential configs:
 -      • `.gitignore`   (Node/Vercel)
 -      • `.editorconfig`
@@ -83,13 +87,13 @@ Pergamon Technical Design
 - 2.  Upload multiple bookshelf photos → Storage
 - 3.  `/api/process-image` server action:
 -        – Call Vision → extract title/author
--        – `/api/enrich-book` to add genre, language, Goodreads link
+-        – `/api/enrich-book` to add tags, language, Goodreads link
 -        – Insert into tables:
--              book(id, title, author, genre, lang, goodreads_url, user_id)
+-              book(id, title, author, tags, lang, goodreads_url, user_id)
 -              image(id, storage_path, user_id, uploaded_at)
 -              bookImageMap(image_id, book_id, bbox_json)
 - 4.  Library page: sortable/filterable grid
-- 5.  Stats page: charts of genre / language counts
+- 5.  Stats page: charts of tags / language counts
 - 6.  Export CSV / JSON
 -
 - SUPABASE `schema.sql` to be generated later.
@@ -115,7 +119,9 @@ Pergamon Technical Design
 - ***
 - 1.  `git init` the workspace.
 - 2.  Create `.cursorrules` with the following:
--      ---
+
+---
+
 -      # Cursor Rules
 -      - Use TypeScript across the repo.
 -      - Prefer Server Components unless a hook/state is required.
@@ -123,7 +129,9 @@ Pergamon Technical Design
 -      - Tailwind class order: display → position → box model → typography → color → misc.
 -      - Commit messages: `<type>(scope): <subject>` (Conventional Commits).
 -      - PR titles must reference an open issue or TODO.
--      ---
+
+---
+
 - 3.  Generate `.gitignore` (Node/Vercel defaults) & `.editorconfig`.
 - 4.  Add `.prettierrc` (singleQuote=true, semi=false, trailingComma=all) and `.eslintrc.json` (Next.js + Tailwind plugin).
 - 5.  Draft `README.md` containing:
@@ -152,11 +160,11 @@ Pergamon Technical Design
 - Build a client-only demo of a Bookshelf App in Next.js (App Router, TypeScript) that:
 - ▸ Loads a local `user_bookshelf.json` file (static asset)
 - ▸ Parses the book list and renders it in a beautiful UI
-- ▸ Allows filtering by Genre, Language, and simple search by Title/Author
+- ▸ Allows filtering by Tags, Language, and simple search by Title/Author
 - ▸ Displays:
 -       – Title
 -       – Author
--       – Genre
+-       – Tags (multiple tags per book)
 -       – Language
 -       – Link to Goodreads
 - ▸ No Supabase, no auth — static build, runs fully in browser
@@ -180,7 +188,7 @@ Pergamon Technical Design
 - ACTIONS:
 - ***
 - - Scaffold layout using Tailwind
-- - Add a dropdown filter for genre and language
+- - Add a dropdown filter for tags and language
 - - Add a text input for keyword search
 - - Open Goodreads link in new tab
 - - Optional: Add download JSON button
@@ -202,19 +210,19 @@ Pergamon Technical Design
 
 - 1.  Lets a logged-in user upload multiple bookshelf photos.
 
-- 2.  Extracts book spines (title + author) with OCR / vision (OpenAI Vision or Google Cloud Vision).
+- 2.  Extracts book spines (title + author) with OCR / vision (OpenAI Vision).
 
 - 3.  Normalizes results, lets the user confirm / edit.
 
 - 4.  Enriches each book with:
 
--        – Genre (fiction, non-fiction, memoir, etc.)                 – Language tag (English / Chinese / …)
+-        – tags (fiction, non-fiction, memoir, etc.)                 – Language tag (English / Chinese / …)
 
 -        – Goodreads URL + rating (fallback to Amazon search if none)
 
 - 5.  Stores structured data (JSON) + original images in **Supabase**:
 
--        – `book` table  (id, title, author, genre, lang, goodreads_url, user_id)
+-        – `book` table  (id, title, author, tags, lang, goodreads_url, user_id)
 
 -        – `image` table (id, storage_path, user_id, uploaded_at)
 
@@ -226,7 +234,7 @@ Pergamon Technical Design
 
 -        – CSV / JSON export
 
--        – Simple stats (counts by genre / language)
+-        – Simple stats (counts by tags / language)
 
 -
 
@@ -304,9 +312,9 @@ Pergamon Technical Design
 
 -      ▸ Search Goodreads → first match → pull URL + rating.
 
--      ▸ Genre & language:
+-      ▸ Tags & language:
 
--          – quick heuristic call to OpenAI ‟Given title/author return {genre, language}”.
+-          – quick heuristic call to OpenAI ‟Given title/author return {tags, language}”.
 
 -      ▸ Return enriched book object.
 
@@ -316,7 +324,7 @@ Pergamon Technical Design
 
 -      /library           – data grid (react-table) with filters + export buttons.
 
--      /stats             – pie charts (react-charts) for genre/lang counts.
+-      /stats             – pie charts (react-charts) for tags/lang counts.
 
 -      /image/[id]        – zoomable image overlay with bounding boxes (Konva canvas).
 
