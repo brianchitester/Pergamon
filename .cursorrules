@@ -2,10 +2,18 @@
 
 - Use TypeScript throughout.
 - Prefer React Server Components unless state/hook needed.
+- Prefer Server Actions over API routes for server-side logic.
 - JSDoc every exported function.
 - Tailwind class order: display → position → box model → typography → color → misc.
 - Commit messages follow Conventional Commits: <type>(scope): <subject>.
 - Use branches to make pull requests and include a description of the changes.
+- PR titles must reference an open issue/TODO.
+- File organization: `lib/` for utilities, `components/` for UI, `types/` for TypeScript definitions, `app/` for routes.
+- Use Zod for runtime validation and type safety.
+- Implement proper error handling with try-catch blocks and user-friendly error messages.
+- Use Edge Runtime for API routes when possible for better performance.
+- Follow Supabase best practices: Row Level Security (RLS) policies, proper client/server separation.
+- Store sensitive data in environment variables, never in code.
 - Use the following commit types:
   - feat: A new feature
   - fix: A bug fix
