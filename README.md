@@ -1,6 +1,6 @@
 # Pergamon Bookshelf
 
-A beautiful client-only bookshelf application built with Next.js, TypeScript, and Tailwind CSS. Browse and filter your personal book collection with an elegant, responsive interface.
+A beautiful bookshelf application built with Next.js, TypeScript, and Tailwind CSS. Browse and filter your personal book collection with an elegant, responsive interface.
 
 ## Features
 
